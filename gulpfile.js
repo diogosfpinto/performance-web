@@ -21,7 +21,7 @@ gulp.task('copy', function() {
 });
 
 gulp.task('clean', function() {
-    return gulp.src('dist/', {read: false})
+    return gulp.src('dist')
         .pipe($.clean());
 });
 
@@ -96,7 +96,7 @@ gulp.task('revreplace', ['rev'], function(){
 });
 
 
-    
+
 /* Alias */
 gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
 gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
