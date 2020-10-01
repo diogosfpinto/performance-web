@@ -16,7 +16,7 @@ var $ = require('gulp-load-plugins')({rename: {'gulp-rev-delete-original':'revde
 
 /* Tasks base */
 gulp.task('copy', function() {
-    return gulp.src(['site/assets/{img,font}/**/*', 'site/app.yaml'], {base: 'site'})
+    return gulp.src(['site/assets/{img,font,css,js}/**/*', 'site/app.yaml', 'site/index.html'], {base: 'site'})
         .pipe(gulp.dest('dist'));
 });
 
@@ -96,7 +96,7 @@ gulp.task('revreplace', ['rev'], function(){
 });
 
 
-
+    
 /* Alias */
 gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
 gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
