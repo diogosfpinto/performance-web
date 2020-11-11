@@ -100,6 +100,6 @@ gulp.task('revreplace', ['rev'], function(){
 /* Alias */
 gulp.task('minify', ['minify-js', 'minify-css', 'minify-html']);
 gulp.task('build', $.sequence(['minify-js', 'minify-css', 'imagemin'], 'useref', 'revreplace'));
-gulp.task('default', $.sequence('clean', 'copy', 'build'));
+gulp.task('default', $.sequence('clean', 'build'));
 
 
